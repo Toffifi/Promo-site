@@ -47,3 +47,45 @@ nav li:not(:first-child):before{
     content: "·";
     padding: 12px;
 }
+.slider{
+    position: relative;
+    background-color: #F06C64;
+    height: 594px;
+    border-bottom: #EA676B solid 6px;
+}
+.vertPhone{
+    position: absolute;
+    top: 52px;
+    left: 112px;
+}
+.horPhone{
+    position: absolute;
+    top: 174px;
+    left: 425px;
+}
+.horImg{
+    position: absolute;
+    top: 188px;
+    left: 485px;
+}
+.vertImg{
+    position: absolute;
+    top: 117px;
+    left: 126px;
+}
+.sliderButton{
+    font-size: 33px;
+    color: #CA4549;
+    position: absolute;
+    top: 46%;
+    cursor: pointer;
+}
+.b1{
+    left: 40px;
+}
+.b2{
+    right: 37px;
+}
+.sliderButton:hover{
+    color: white;
+}
