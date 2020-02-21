@@ -1,13 +1,52 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration:none;
+    color: black;
+  }
 body {
     max-width: 1020px;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
-}
-a {
-    text-decoration: none;
-}
-li {
-    list-style-type: none;
 }
 header{
     background-color: #2d303a;
@@ -88,4 +127,60 @@ nav li:not(:first-child):before{
 }
 .sliderButton:hover{
     color: white;
+}
+.ourServises{
+    height: 496px;
+    background-color: #F2F2F2;
+    color: #666D89;
+    border-bottom: #FFFFFF solid 6px;
+}
+.container{
+    margin: 0 41px;
+}
+.about{
+    padding-top: 62px;
+}
+.about h2{
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+}
+.about p{
+    line-height: 30px;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    word-spacing: 0.39px;
+    margin-top: 21px;
+}
+
+.flexColumns{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 47px;
+    height: 247px;
+    width: 969px;
+}
+.flexColumns > div{
+    width: 33%;
+    height: 50%;
+}
+.flexColumns img{
+    float: left;
+}
+.flexColumns p{
+    margin-top: 10px;
+    margin-left: 80px;
+    padding-right: 17px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    line-height: 22px;
+}
+.flexColumns h3{
+    margin-left: 80px;
+    margin-top: -4px;
+    font-weight: 900;
+    font-size: 19px;
+    letter-spacing: -0.7px;
+    word-spacing: 0.6px;
 }
