@@ -148,8 +148,8 @@ nav li:not(:first-child):before{
 .our p{
     line-height: 30px;
     font-size: 17px;
-    letter-spacing: 0.3px;
-    word-spacing: 0.39px;
+    letter-spacing: 0.25px;
+    word-spacing: -0.4px;
     margin-top: 21px;
     text-align: justify;
 }
@@ -171,13 +171,13 @@ nav li:not(:first-child):before{
 .flexColumns p{
     margin-top: 10px;
     margin-left: 80px;
-    padding-right: 17px;
+    padding-right: 21px;
     font-size: 11px;
-    letter-spacing: 0.5px;
-    word-spacing: 2px;
+    letter-spacing: 0.4px;
     line-height: 22px;
     overflow: hidden;
     height: 66px;
+    text-align: justify;
 }
 .flexColumns h3{
     margin-left: 80px;
@@ -247,8 +247,7 @@ nav li:not(:first-child):before{
 .aboutUs p{
 	margin-top: 20px;
 	font-size: 17px;
-	letter-spacing: 0.19px;
-	word-spacing: 1.3px;
+	letter-spacing: 0.2px;
     line-height: 30px;
     text-align: justify;
 }
@@ -306,7 +305,6 @@ nav li:not(:first-child):before{
 .getQuote p{
     margin-top: 21px;
     font-size: 17px;
-    word-spacing: -0.5px;
     letter-spacing: 0.2px;
     line-height: 30px;
     text-align: justify;
