@@ -51,7 +51,7 @@ body {
 .getQuote{
     background-color: #f06c64;
 	color: #F0D8D9;
-	padding: 64px 40px;
+    padding: 64px 40px 37px;
 	border-bottom: 6px solid #EA676B;
 }
 .getQuote h2{
@@ -69,33 +69,36 @@ body {
 }
 .contact{
     display: flex;
-    margin-top: 43px;
+    margin-top: 42px;
+}
+.contact form{
+    width: 620px;
 }
 .contact form input, textarea{
-    width: 618px;
+    width: 609px;
     border-radius: 4px;
+    padding: 5px;
     background-color: #d6564f;
     outline: none;
     border: none;   
 }
 .contact form input::placeholder, textarea::placeholder{
     color: #EC7E7E;
-    padding-left: 15px;
+    padding-left: 10px;
     font-size: 11px;
     letter-spacing: 0.4px;
 }
 .contact form textarea::placeholder{
-    padding-top: 9px;
+    padding-top: 8px;
     font-family: 'Lato', sans-serif;
-    padding-left: 13px;
 }
 .contact form input{
-    height: 35px;
-    margin-bottom: 17px;
+    height: 28px;
+    margin-bottom: 16px;
 }
 .contact form textarea{
-    width: 615px;
-    height: 197px;
+    width: 609px;
+    height: 192px;
 }
 .contact form button{
     color: #F0D8D9;
@@ -104,9 +107,6 @@ body {
     box-shadow: 0 -3px #F08586 inset;
     transition: 0.2s;
     padding: 6px 38px;
-    position: absolute;
-    bottom: 0px;
-    margin-left: -112px;
     outline: none;
     border: none;  
 } 
@@ -115,27 +115,27 @@ body {
     background:#EA676B;
 }
 .contact div{
-    margin-left: -75px;
-    height: 300px;
+    margin-left: 21px;
 }
 .contact h3{
-    font-size: 19px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
 .contact p{
     font-size: 11px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.57px;
     word-spacing: -2px;
-    line-height: 21px;
-    margin-top: 9px;
-    margin-bottom: 28px;
+    line-height: 22px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 .contact span{
     display: block;
     font-size: 11px;
     letter-spacing: 0.3px;
     word-spacing: -1px;
-    margin-top: 10px;
+    margin-top: 11px;
 }
 .contact a{
     color: #F0D8D9;
@@ -149,7 +149,7 @@ footer{
     background-color: #2D303A;
     color: #626984;
     font-size: 12px;
-    padding: 32px 41px;
+    padding: 32px 41px 20px;
 }
 footer div{
     margin-top: -10px;
