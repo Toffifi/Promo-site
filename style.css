@@ -224,6 +224,10 @@ nav li:not(:first-child):before{
 	color: white;
 	border-color: white;
 }
+.portfolioActive{
+    color: white;
+	border-color: white;
+}
 .gallery{
 	margin-top: 19.5px;
     margin-bottom: 4px;
@@ -236,7 +240,12 @@ nav li:not(:first-child):before{
 }
 .gallery img {
 	width: 221px;
-	height: 188px;
+    height: 188px;
+    cursor: pointer;
+}
+.activeImg{
+    box-sizing: border-box;
+    border: 5px solid #F06C64;
 }
 .about{
 	background-color: #F2F2F2;
