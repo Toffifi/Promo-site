@@ -43,14 +43,18 @@ a {
     text-decoration:none;
     color: black;
   }
-body {
+body, html {
     max-width: 1020px;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
 }
 header{
     background-color: #2d303a;
     border-bottom: #323746 solid 6px;
+    position: fixed;
+    width: 1020px;
+    z-index: 99;
 }
 .head{
     display: flex;
@@ -71,20 +75,21 @@ header{
 nav ul{
     display: flex;
     justify-content: space-between;
-    padding-top: 9px;
+    padding-top: 7px;
     width: 372px;
 }
-nav li{
+nav a{
     color: white;
     font-size: 12px;
     cursor: pointer;
 }
-nav li:hover{
+nav a:hover{
     color:#F06C64;
 }
 nav li:not(:first-child):before{
     content: "·";
     padding: 12px;
+    color: white;
 }
 .slider{
     position: relative;
@@ -406,4 +411,16 @@ footer img{
 footer img:hover{
     cursor: pointer;
 	background-color: #F08586;
+}
+main{
+    padding-top: 95px;
+    
+}
+section{
+    padding-top: 94px;
+    margin-top: -94px;
+}
+.active{
+    color:#F06C64;
+    font-weight: 900;
 }
