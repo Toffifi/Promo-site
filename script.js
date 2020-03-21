@@ -3,15 +3,16 @@ const img = document.querySelectorAll('.gallery img');
 const form = document.querySelector('form');
 const modal = document.querySelector('#myModal');
 const span = document.querySelector(".close");
+const sliderContainer = document.querySelector('.slider-container');
+
+let busy = false
+let scrollOffset = 0;
 
 document.addEventListener('scroll', onScroll);
 document.querySelector('#slider-button-left')?.addEventListener('click', () => sliderButtonClick(false));
 document.querySelector('#slider-button-right')?.addEventListener('click', (I) => sliderButtonClick(true));
-document.querySelector('.vertPhone')?.addEventListener('click', () => phoneClick(".vertImg"));
-document.querySelector('.horPhone')?.addEventListener('click', () => phoneClick(".horImg"));
-document.querySelector('.phone1')?.addEventListener('click', () => phoneClick(".img1"));
-document.querySelector('.phone2')?.addEventListener('click', () => phoneClick(".img2"));
-document.querySelector('.phone3')?.addEventListener('click', () => phoneClick(".img3"));
+addPhoneEventListeners(1, sliderContainer.children[0]);
+addPhoneEventListeners(2, sliderContainer.children[1]);
 
 function onScroll(e) {
     const curPos = window.scrollY + 1;
@@ -87,9 +88,17 @@ span.addEventListener('click', () => {
     document.querySelector('#textInput').value = "";
 })
 
+function addPhoneEventListeners(number, page) {
+    if (number === 1) {
+        page.children[0]?.addEventListener('click', () => phoneClick(".vertImg"));
+        page.children[2]?.addEventListener('click', () => phoneClick(".horImg"));
+    } else if (number === 2) {
+        page.children[0]?.addEventListener('click', () => phoneClick(".img1"));
+        page.children[2]?.addEventListener('click', () => phoneClick(".img2"));
+        page.children[4]?.addEventListener('click', () => phoneClick(".img3"));
+    }
+}
 
-let busy = false
-let scrollOffset = 0;
 function sliderButtonClick(button) {
     if (busy) {
         setTimeout(() => sliderButtonClick(button), 100);
@@ -97,30 +106,24 @@ function sliderButtonClick(button) {
     } 
     busy = true;
     setTimeout(() => busy = false, 600);
-    const container = document.querySelector('.slider-container');
+    const container = sliderContainer;
     if (container) {
         scrollOffset += button ? 1 : -1;
-        const pages = document.querySelectorAll('.slider-page');
         if (container.children.length < 3) {
-            const dubPage = pages[pages.length - 1].cloneNode(true);
+            const dubPage = container.children[container.children.length - 1].cloneNode(true);
             dubPage.style.transform = `translateX(-100%)`;
-            dubPage.children[0]?.addEventListener('click', () => phoneClick(".img1"));
-            dubPage.children[2]?.addEventListener('click', () => phoneClick(".img2"));
-            dubPage.children[4]?.addEventListener('click', () => phoneClick(".img3"));
+            addPhoneEventListeners(2, dubPage);
             container.prepend(dubPage);
         }
         container.style.transform = `translateX(${scrollOffset * 100 * -1}%)`;
-        const newPage = pages[1].cloneNode(true);
+        const newPage = container.children[1].cloneNode(true);
         if (Math.abs(scrollOffset % 2) === 1) {
-            newPage.children[0]?.addEventListener('click', () => phoneClick(".vertImg"));
-            newPage.children[2]?.addEventListener('click', () => phoneClick(".horImg"));
+            addPhoneEventListeners(1, newPage);
         } else {
-            newPage.children[0]?.addEventListener('click', () => phoneClick(".img1"));
-            newPage.children[2]?.addEventListener('click', () => phoneClick(".img2"));
-            newPage.children[4]?.addEventListener('click', () => phoneClick(".img3"));
+            addPhoneEventListeners(2, newPage);
         }
         newPage.style.transform = `translateX(${(scrollOffset + (button ? 1 : -1)) * 100}%)`;
-        pages[button ? 0 : (pages.length -1)].remove();
+        container.children[button ? 0 : (container.children.length -1)].remove();
         if (button) {
             container.append(newPage);
         } else {
