@@ -177,11 +177,11 @@
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="contact">
                     <form action="">
-                        <input type="text" required placeholder="Name (Required)">
-                        <input type="email" required placeholder="Email (Required)">
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Describe your project in detail..."></textarea>
-                        <button type="submit">Send</button>
+                        <input id="nameInput" type="text" required placeholder="Name (Required)">
+                        <input id="emailInput" type="email" required placeholder="Email (Required)">
+                        <input id="subjectInput" type="text" placeholder="Subject">
+                        <textarea id="textInput"  placeholder="Describe your project in detail..."></textarea>
+                        <button type="submit" id="submitBut">Send</button>
                     </form>
                     <div>
                         <h3>Contact Information</h3>
@@ -202,6 +202,16 @@
             <img src="./assets/images/LinkedIn.png" alt="">
         </div>
         </footer>
+        <div id="myModal" class="modal">            
+            <div class="modal-content">
+              <div class="modal-body">
+                <h4>Mail send</h4>
+                <p>Subject</p>
+                <p>Description</p>
+                <span class="close">OK</span>
+              </div>
+            </div>          
+          </div>
         <script src="./script.js"></script>
     </main>
 </body>
