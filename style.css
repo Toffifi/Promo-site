@@ -93,9 +93,27 @@ nav li:not(:first-child):before{
 }
 .slider{
     position: relative;
-    background-color: #F06C64;
     height: 594px;
     border-bottom: #EA676B solid 6px;
+    overflow: hidden;
+}
+.slider-container{
+    align-items: stretch;
+    position: relative;
+    height: 594px;
+    transition: transform 0.6s ease;
+}
+.slider-page{
+    position: absolute;
+    height: 594px;
+    min-width: 1020px;
+    max-width: 1020px;
+}
+.sp-1{
+    background-color: #F06C64;
+}
+.sp-2{
+    background-color: #648BF0;
 }
 .vertPhone{
     position: absolute;
@@ -106,6 +124,11 @@ nav li:not(:first-child):before{
     position: absolute;
     top: 174px;
     left: 425px;
+}
+.multLeftPhone{
+    position: absolute;
+    top: 52px;
+    left: 112px;
 }
 .horImg{
     position: absolute;
@@ -123,6 +146,7 @@ nav li:not(:first-child):before{
     position: absolute;
     top: 47%;
     cursor: pointer;
+    z-index: 50;
 }
 .b1{
     left: 40px;
@@ -131,7 +155,7 @@ nav li:not(:first-child):before{
     right: 37px;
 }
 .sliderButton:hover{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .ourServises{
     height: 494px;
@@ -428,6 +452,40 @@ section{
 .active{
     color:#F06C64;
     font-weight: 900;
+}
+.comboPhone{
+    position: absolute;
+}
+.comboImg{
+    position: absolute;
+}
+.phone1{
+    top: 7%;
+    left: 38%;
+}
+.phone2{
+    top: 25%;
+    left: 616px;
+    z-index: -1;
+}
+.phone3{
+    top: 25%;
+    left: 255px;
+    z-index: -1;
+}
+.img1{
+    top: 111px;
+    left: 401px;
+}
+.img2{
+    top: 190px;
+    left: 625px;
+    z-index: -1;
+}
+.img3{
+    top: 32%;
+    left: 264px;
+    z-index: -1;
 }
 .modal {
     display: none;
