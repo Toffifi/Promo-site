@@ -106,8 +106,7 @@ nav li:not(:first-child):before{
 .slider-page{
     position: absolute;
     height: 594px;
-    min-width: 1020px;
-    max-width: 1020px;
+    width: 100%;
 }
 .sp-1{
     background-color: #F06C64;
@@ -229,8 +228,9 @@ nav li:not(:first-child):before{
 }
 .portfolio p{
     margin-top: 28px;
-	font-size: 17px;
-	letter-spacing: 0.19px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
 }
 .portfolio ul{
 	display: flex;
@@ -297,8 +297,9 @@ nav li:not(:first-child):before{
     margin-bottom: 1px;
 }
 .photo{
-	width: 300px;
-	height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 300px;
 }
 .team h3{
 	max-width: 300px;
@@ -352,10 +353,10 @@ nav li:not(:first-child):before{
     margin-top: 42px;
 }
 .contact form{
-    width: 620px;
+    width: 224%;
 }
 .contact form input, textarea{
-    width: 609px;
+    width: 100%;
     border-radius: 4px;
     padding: 5px;
     background-color: #d6564f;
@@ -377,25 +378,26 @@ nav li:not(:first-child):before{
     margin-bottom: 16px;
 }
 .contact form textarea{
-    width: 609px;
+    width: 100%;
     height: 192px;
 }
 .contact form button{
-    color: #F0D8D9;
-    border-radius: 3px;
-    background: #d6564f;
+    color: black;
+    border-radius: 5px;
+    background: #FBC65F;
     box-shadow: 0 -3px #F08586 inset;
     transition: 0.2s;
-    padding: 6px 38px;
+    padding: 13px 53px;
     outline: none;
-    border: none;   
+    border: none;
+    margin-top: 14px;
 } 
 .contact form button:hover{
     cursor: pointer;
     background:#EA676B;
 }
 .contact div{
-    margin-left: 21px;
+    margin-left: 29px;
 }
 .contact h3{
     font-size: 18px;
@@ -531,4 +533,169 @@ section{
 }
 .modal-body {
     padding: 20px;
+}
+@media (max-width: 1019px) {
+    header {
+        width: 100vw;
+    }
+    .img1 {
+        top: 19%;
+        left: 39.5%;
+    }
+    .our {
+        padding-top: 43px;
+    }
+    .container {
+        padding-bottom: 17px;
+    }
+    .ourServises {
+        height: 100%;
+    }
+    .flexColumns {
+        margin-top: 39px;
+        height: 100%;
+        width: 103%;
+    }
+    .flexColumns > div{
+        flex: 1 0 50%;
+        margin-bottom: 52px;
+    }
+    .portfolio p {
+        margin-top: 21px;
+        width: 94%;
+    }
+    .portfolio ul {
+        margin-top: 12px;
+    }
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        grid-gap: 15px;
+        margin-top: 26px;
+    }
+    .about {
+        padding-top: 56px;
+    }
+    .team {
+        margin-top: 38px;
+    }
+    .team p {
+        margin-top: -4px;
+    }
+    .social {
+        margin-top: 10px;
+    }
+    .getQuote {
+        padding-top: 58px;
+    }
+    .contact {
+        margin-top: 25px;
+    }
+    .contact div {
+        margin-left: 39px;
+    }
+    .contact form {
+        width: 297%;
+    }
+    .contact p {
+        margin-top: 2px;
+        margin-bottom: 16px;
+    }
+    .contact form input {
+        margin-bottom: 12px;
+    }
+    .contact form textarea {
+        height: 150px;
+    }
+}
+@media (max-width: 949px) {
+    
+    .slider {
+        height: 445px;
+    }
+    .b1 {
+        left: 28px;
+    }
+    .b2 {
+        right: 25px;
+    }
+    .vertPhone {
+        top: 41px;
+        left: 84px;
+    }
+    .vertImg {
+        top: 90px;
+        left: 95px;
+    }
+    .horPhone {
+        top: 132px;
+    }
+    .horImg {
+        top: 143px;
+        left: 470px;
+    }
+    .img1 {
+        top: 95px;
+        left: 371px;
+    }
+    .phone2 {
+        top: 23%;
+        left: 533px;
+    }
+    .img2 {
+        top: 168px;
+        left: 539px;
+    }
+    .phone3 {
+        top: 23%;
+        left: 253px;
+    }
+    .img3 {
+        top: 168px;
+        left: 260px;
+    }
+}
+@media (max-width: 830px) {
+    .horPhone {
+        top: 132px;
+        left: 318px;
+    }
+    .horImg {
+        top: 143px;
+        left: 364px;
+    }
+    .img1 {
+        left: 326px;
+    }
+    .phone2 {
+        left: 466px;
+    }
+    .img2 {
+        left: 472px;
+    }
+    .phone3 {
+        left: 188px;
+    }
+    .img3 {
+        left: 195px;
+    }
+}
+@media (max-width: 780px) {
+    .img1 {
+        left: 303px;
+    }
+}
+
+@media (max-width: 767px) {
+    
+}
+@media (max-width: 540px) {
+    header nav {
+        display: none;
+    }
+}
+
+@media (max-width: 374px) {
+    
 }
