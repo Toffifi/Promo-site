@@ -96,52 +96,80 @@ nav li:not(:first-child):before{
     display: none;
 }
 .slider{
-    position: relative;
-    height: 594px;
+    position: relative;    
+    max-height: 594px;
+    height: 58vw;
     border-bottom: #EA676B solid 6px;
     overflow: hidden;
 }
 .slider-container{
     align-items: stretch;
     position: relative;
-    height: 594px;
+    height: 100%;
     transition: transform 0.6s ease;
 }
 .slider-page{
     position: absolute;
-    height: 594px;
+    height: 100%;
     width: 100%;
+    display: grid;
 }
 .sp-1{
-    background-color: #F06C64;
+    background-color: #F06C64;    
+    grid-template-columns: 35% 58%;
+    justify-content: space-between;
 }
 .sp-2{
     background-color: #648BF0;
+    grid-template-columns: 16.2% 25% 16%;
+    justify-content: center;
 }
-.vertPhone{
-    position: absolute;
-    top: 52px;
-    left: 112px;
+.slider-page > div{
+    cursor: pointer;    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: grid;
+    align-items: center;    
+    transition: opacity 0.3s ease-out;
 }
-.horPhone{
-    position: absolute;
-    top: 174px;
-    left: 425px;
+.vertPhone {
+    background-image: url(./assets/images/iPhone_Vertical.png);
+    width: 69%;
+    justify-self: flex-end;
 }
-.multLeftPhone{
-    position: absolute;
-    top: 52px;
-    left: 112px;
+.vertImg {
+    margin: 27% 16% 33% 7%;
 }
-.horImg{
-    position: absolute;
-    top: 188px;
-    left: 485px;
+.slider-page img {
+    height: 100%;
+    width: 100%;
 }
-.vertImg{
-    position: absolute;
-    top: 117px;
-    left: 126px;
+.horPhone {
+    background-image: url(./assets/images/iPhone_Horizontal.png);
+    width: 81%;
+    justify-self: flex-start;
+}
+.horImg {
+    margin: 28% 19% 33% 12%;
+}
+.horImg img {
+    height: 100%;
+    width: 100%;
+}
+.phone2 {
+    background-image: url(./assets/images/phone-vertical.png);
+    z-index: 10;
+}
+.phone1, .phone3 {
+    background-image: url(./assets/images/phone-vertical2.png);
+    opacity: 0.5;
+}
+.phone1 {
+    margin-right: -17%;
+}
+.phone3 {
+    margin-left: -18%;
 }
 .sliderButton{
     font-size: 33px;
@@ -462,40 +490,6 @@ section{
     color:#F06C64 !important;
     font-weight: 900;
 }
-.comboPhone{
-    position: absolute;
-}
-.comboImg{
-    position: absolute;
-}
-.phone1{
-    top: 7%;
-    left: 38%;
-}
-.phone2{
-    top: 25%;
-    left: 616px;
-    z-index: -1;
-}
-.phone3{
-    top: 25%;
-    left: 255px;
-    z-index: -1;
-}
-.img1{
-    top: 111px;
-    left: 401px;
-}
-.img2{
-    top: 190px;
-    left: 625px;
-    z-index: -1;
-}
-.img3{
-    top: 32%;
-    left: 264px;
-    z-index: -1;
-}
 .modal {
     display: none;
     position: fixed;
@@ -550,17 +544,10 @@ section{
     transform: rotate(90deg);
 }
 #blur {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgba(0,0,0,0);
-    transition: z-index 0.6s step-end, background-color 0.6s linear;
+    display: none;
 }
 .blurOpen {    
-    z-index: 998 !important; 
+    z-index: 450 !important; 
     background-color: rgba(0,0,0,0.4) !important;
     transition: z-index 0.6s step-start, background-color 0.6s linear !important;
 }
@@ -650,83 +637,13 @@ section{
     }
 }
 @media (max-width: 949px) {
-    
-    .slider {
-        height: 445px;
-    }
     .b1 {
         left: 28px;
     }
     .b2 {
         right: 25px;
     }
-    .vertPhone {
-        top: 41px;
-        left: 84px;
-    }
-    .vertImg {
-        top: 90px;
-        left: 95px;
-    }
-    .horPhone {
-        top: 132px;
-    }
-    .horImg {
-        top: 143px;
-        left: 470px;
-    }
-    .img1 {
-        top: 95px;
-        left: 371px;
-    }
-    .phone2 {
-        top: 23%;
-        left: 533px;
-    }
-    .img2 {
-        top: 168px;
-        left: 539px;
-    }
-    .phone3 {
-        top: 23%;
-        left: 253px;
-    }
-    .img3 {
-        top: 168px;
-        left: 260px;
-    }
 }
-@media (max-width: 830px) {
-    .horPhone {
-        top: 132px;
-        left: 318px;
-    }
-    .horImg {
-        top: 143px;
-        left: 364px;
-    }
-    .img1 {
-        left: 326px;
-    }
-    .phone2 {
-        left: 466px;
-    }
-    .img2 {
-        left: 472px;
-    }
-    .phone3 {
-        left: 188px;
-    }
-    .img3 {
-        left: 195px;
-    }
-}
-@media (max-width: 780px) {
-    .img1 {
-        left: 303px;
-    }
-}
-
 @media (max-width: 767px) {
     .gallery {
         grid-template-columns: 1fr 1fr;        
@@ -739,21 +656,30 @@ section{
         display: none;
       }
 }
-@media (max-width: 720px) {    
-    .slider {
-        height: 300px;
-    }
-}
 @media (max-width: 600px) {
     .flexColumns > div{
         flex: 1 0 100%;
         margin-bottom: 28px;
     }
-    .team{
+    .team {
+        margin-top: 25px;
+        grid-gap: 35px;
         grid-template-columns: 1fr;
     }
-}
-@media (max-width: 540px) {
+    .photo {
+        max-width: 400px;
+    }
+    #blur {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(0,0,0,0);
+        transition: z-index 0.6s step-end, background-color 0.6s linear;
+    }
     header {
         border-bottom: none;
     }
@@ -810,7 +736,7 @@ section{
         height: 70px;
         width: 100%;
         background-color: #2d303a;
-        z-index: 950;
+        z-index: 400;
     }
     .logo {
         font-size: 9px;
@@ -826,9 +752,8 @@ section{
     main {
         padding-top: 70px;
     }
-    .slider {
-        height: 215px;
-    }
+}
+@media (max-width: 540px) {
     .contact {
         display: grid;
         margin-top: 23px;
@@ -850,7 +775,7 @@ section{
         margin-top: 32px;
     }
     .our {
-        padding-top: 29px;
+        padding-top: 26px;
     }
     .portfolio {
         padding: 46px 29px;
@@ -860,13 +785,6 @@ section{
     }
     .about {
         padding: 42px 30px 40px;
-    }
-    .team {
-        margin-top: 25px;
-        grid-gap: 35px;
-    }
-    .photo {
-        max-width: 400px;
     }
     .getQuote {
         padding: 46px 31px 42px;
@@ -880,6 +798,15 @@ section{
     footer {
         justify-content: space-around;
         padding: 33px 0 20px;
+    }
+    .sliderButton {
+        font-size: 28px;
+    }
+    .b1 {
+        left: 14px;
+    }
+    .b2 {
+        right: 14px;
     }
 }
 

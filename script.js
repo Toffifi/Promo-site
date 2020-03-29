@@ -17,8 +17,12 @@ document.addEventListener('scroll', onScroll);
 
 document.querySelector('#slider-button-left')?.addEventListener('click', () => sliderButtonClick(false));
 document.querySelector('#slider-button-right')?.addEventListener('click', (I) => sliderButtonClick(true));
-addPhoneEventListeners(1, sliderContainer.children[0]);
-addPhoneEventListeners(2, sliderContainer.children[1]);
+
+document.querySelectorAll(".slider-page > div").forEach(el => addPhoneEventListeners(el));
+
+
+// addPhoneEventListeners(1, sliderContainer.children[0]);
+// addPhoneEventListeners(2, sliderContainer.children[1]);
 
 portfolioTabs.forEach((el) => {
     el.addEventListener('click', (e) => {      
@@ -115,20 +119,13 @@ function burgerStateChanged() {
     }
 }
 
-function addPhoneEventListeners(number, page) {
-    if (number === 1) {
-        page.children[0]?.addEventListener('click', () => phoneClick(".vertImg"));
-        page.children[2]?.addEventListener('click', () => phoneClick(".horImg"));
-    } else if (number === 2) {
-        page.children[0]?.addEventListener('click', () => phoneClick(".img1"));
-        page.children[2]?.addEventListener('click', () => phoneClick(".img2"));
-        page.children[4]?.addEventListener('click', () => phoneClick(".img3"));
-    }
+function addPhoneEventListeners(el) {
+    el.addEventListener('click', (event) => phoneClick(event))
+    el.addEventListener('mousedown', (e) => e.preventDefault(), false);
 }
 
 function sliderButtonClick(button) {
     if (busy) {
-        setTimeout(() => sliderButtonClick(button), 100);
         return;
     } 
     busy = true;
@@ -139,32 +136,32 @@ function sliderButtonClick(button) {
         if (container.children.length < 3) {
             const dubPage = container.children[container.children.length - 1].cloneNode(true);
             dubPage.style.transform = `translateX(-100%)`;
-            addPhoneEventListeners(2, dubPage);
+            Array.from(dubPage.children).forEach(el => addPhoneEventListeners(el));
             container.prepend(dubPage);
         }
-        container.style.transform = `translateX(${scrollOffset * 100 * -1}%)`;
         const newPage = container.children[1].cloneNode(true);
-        if (Math.abs(scrollOffset % 2) === 1) {
-            addPhoneEventListeners(1, newPage);
-        } else {
-            addPhoneEventListeners(2, newPage);
-        }
+        Array.from(newPage.children).forEach(el => addPhoneEventListeners(el));
+        container.style.transform = `translateX(${scrollOffset * 100 * -1}%)`;
         newPage.style.transform = `translateX(${(scrollOffset + (button ? 1 : -1)) * 100}%)`;
-        container.children[button ? 0 : (container.children.length -1)].remove();
         if (button) {
+            container.children[0].remove();
             container.append(newPage);
         } else {
+            container.children[container.children.length -1].remove();
             container.prepend(newPage);
         }
     }
 
 }
 
-function phoneClick(name) {
-    const item = document.querySelector(name);
-    if (!item.style.display) {
-        item.style.display = 'none';
-    } else {
-        item.style.display = "";
+function phoneClick(event) {
+    event.preventDefault();
+    const item = event.target.children[0];
+    if (item) {
+        if (!item.style.opacity || item.style.opacity === '1') {
+            item.style.opacity = '0';
+        } else {
+            item.style.opacity = '1';
+        }
     }
 }
