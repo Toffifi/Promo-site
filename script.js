@@ -4,36 +4,21 @@ const form = document.querySelector('form');
 const modal = document.querySelector('#myModal');
 const span = document.querySelector(".close");
 const sliderContainer = document.querySelector('.slider-container');
+const burger = document.querySelector('.burger');
+const blur = document.querySelector('#blur');
+const head = document.querySelector('.head');
+const links = document.querySelectorAll('nav a');
 
 let busy = false
 let scrollOffset = 0;
+let burgerState = false;
 
 document.addEventListener('scroll', onScroll);
+
 document.querySelector('#slider-button-left')?.addEventListener('click', () => sliderButtonClick(false));
 document.querySelector('#slider-button-right')?.addEventListener('click', (I) => sliderButtonClick(true));
 addPhoneEventListeners(1, sliderContainer.children[0]);
 addPhoneEventListeners(2, sliderContainer.children[1]);
-
-function onScroll(e) {
-    const curPos = window.scrollY + 1;
-    const links = document.querySelectorAll('nav a');
-    const maxOffset = document.querySelector('main')?.offsetHeight - window.innerHeight;
-    if (curPos >= maxOffset ) {
-        links.forEach((a) => a.classList.remove('active'));
-        links[links.length - 1].classList.add('active');
-    } else {
-        document.querySelectorAll('section').forEach((el) => {
-            if(el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
-                links.forEach((a) => {
-                    a.classList.remove('active');
-                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
-                        a.classList.add('active');
-                    }
-                })
-            }
-        })
-    }
-}
 
 portfolioTabs.forEach((el) => {
     el.addEventListener('click', (e) => {      
@@ -80,6 +65,12 @@ form.addEventListener('submit', (event) => {
     modalBody.children[2].textContent = "Description: " + textVal;
 })
 
+links.forEach((a) => a.addEventListener('click', () => {
+    if(burgerState) {
+        burgerStateChanged();
+    }
+}));
+
 span.addEventListener('click', () => {
     modal.style.display = "none";
     document.querySelector('#nameInput').value = "";
@@ -87,6 +78,42 @@ span.addEventListener('click', () => {
     document.querySelector('#subjectInput').value = "";
     document.querySelector('#textInput').value = "";
 })
+burger.addEventListener('click', burgerStateChanged);
+blur.addEventListener('click', burgerStateChanged);
+
+function onScroll(e) {
+    const curPos = window.scrollY + 1;
+    const maxOffset = document.querySelector('main')?.offsetHeight - window.innerHeight;
+    if (curPos >= maxOffset ) {
+        links.forEach((a) => a.classList.remove('active'));
+        links[links.length - 1].classList.add('active');
+    } else {
+        document.querySelectorAll('section').forEach((el) => {
+            if(el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
+                links.forEach((a) => {
+                    a.classList.remove('active');
+                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('active');
+                    }
+                })
+            }
+        })
+    }
+}
+
+function burgerStateChanged() {
+    if(burgerState){
+        burgerState = false;
+        burger.classList.remove('burger-open');
+        blur.classList.remove('blurOpen');
+        head.classList.remove('bmOpen');
+    } else {
+        burgerState = true;
+        burger.classList.add('burger-open');
+        blur.classList.add('blurOpen');
+        head.classList.add('bmOpen');
+    }
+}
 
 function addPhoneEventListeners(number, page) {
     if (number === 1) {
