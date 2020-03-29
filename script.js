@@ -16,8 +16,8 @@ let burgerState = false;
 
 document.addEventListener('scroll', onScroll);
 
-document.querySelector('#slider-button-left')?.addEventListener('click', () => sliderButtonClick(false));
-document.querySelector('#slider-button-right')?.addEventListener('click', (I) => sliderButtonClick(true));
+document.querySelector('#slider-button-left').addEventListener('click', () => sliderButtonClick(false));
+document.querySelector('#slider-button-right').addEventListener('click', (I) => sliderButtonClick(true));
 
 document.querySelectorAll(".slider-page > div").forEach(el => addPhoneEventListeners(el));
 
@@ -84,7 +84,7 @@ blur.addEventListener('click', burgerStateChanged);
 
 function onScroll(e) {
     const curPos = window.scrollY + 1;
-    const maxOffset = document.querySelector('main')?.offsetHeight - window.innerHeight;
+    const maxOffset = document.querySelector('main').offsetHeight - window.innerHeight;
     if (curPos >= maxOffset ) {
         links.forEach((a) => a.classList.remove('active'));
         links[links.length - 1].classList.add('active');
