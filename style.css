@@ -136,11 +136,11 @@ nav li:not(:first-child):before{
 }
 .vertPhone {
     background-image: url(./assets/images/iPhone_Vertical.png);
-    width: 69%;
+    width: 67%;
     justify-self: flex-end;
 }
 .vertImg {
-    margin: 27% 16% 33% 7%;
+    margin: 26% 15% 33% 6%;
 }
 .slider-page img {
     height: 100%;
@@ -645,6 +645,12 @@ section{
     .b2 {
         right: 25px;
     }
+    .sliderButton {
+        top: 47%;
+    }
+    nav ul {
+        padding-top: 0;
+    }
 }
 @media (max-width: 767px) {
     .gallery {
@@ -803,12 +809,13 @@ section{
     }
     .sliderButton {
         font-size: 28px;
+        top: 44%;
     }
     .b1 {
-        left: 14px;
+        left: 10px;
     }
     .b2 {
-        right: 14px;
+        right: 10px;
     }
 }
 
