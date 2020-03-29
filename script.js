@@ -1,3 +1,4 @@
+"use strict";
 const portfolioTabs = document.querySelectorAll('.portfolio ul li');
 const img = document.querySelectorAll('.gallery img');
 const form = document.querySelector('form');
@@ -19,10 +20,6 @@ document.querySelector('#slider-button-left')?.addEventListener('click', () => s
 document.querySelector('#slider-button-right')?.addEventListener('click', (I) => sliderButtonClick(true));
 
 document.querySelectorAll(".slider-page > div").forEach(el => addPhoneEventListeners(el));
-
-
-// addPhoneEventListeners(1, sliderContainer.children[0]);
-// addPhoneEventListeners(2, sliderContainer.children[1]);
 
 portfolioTabs.forEach((el) => {
     el.addEventListener('click', (e) => {      
